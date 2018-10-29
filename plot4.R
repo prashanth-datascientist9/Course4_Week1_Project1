@@ -1,4 +1,7 @@
 plot4 <- function() {
+  #Load the data
+  twodaysdata <- data_load()
+  
   par(mfrow=c(2,2))
   
   #first row, plot 1
