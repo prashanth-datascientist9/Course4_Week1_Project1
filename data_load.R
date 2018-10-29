@@ -15,7 +15,7 @@ power$Date <- as.Date(power$Date, format = "%d/%m/%Y")
 #Filter the data based on two dates 7/1/07 and 7/2/07 from the date column
 twodaysdata <- power[(power$Date == "2007-02-01") | (power$Date == "2007-02-02"), ]
   
-#Remove any unknown values in the columns
+#Convert values in the columns to be numeric
 twodaysdata$Global_active_power <- as.numeric(as.character(twodaysdata$Global_active_power))
 twodaysdata$Global_reactive_power <- as.numeric(as.character(twodaysdata$Global_reactive_power))
 twodaysdata$Voltage <- as.numeric(as.character(twodaysdata$Voltage))
@@ -23,7 +23,7 @@ twodaysdata$Voltage <- as.numeric(as.character(twodaysdata$Voltage))
 #Create a new column by appending the date and time
 twodaysdata <- transform(twodaysdata, timestamp = as.POSIXct(paste(Date, Time)), "%d/%m/%Y %H:%M:%S")
   
-#Remove any unknown values in the columns
+#Convert values in the columns to be numeric
 twodaysdata$Sub_metering_1 <- as.numeric(as.character(twodaysdata$Sub_metering_1))
 twodaysdata$Sub_metering_2 <- as.numeric(as.character(twodaysdata$Sub_metering_2))
 twodaysdata$Sub_metering_3 <- as.numeric(as.character(twodaysdata$Sub_metering_3))
