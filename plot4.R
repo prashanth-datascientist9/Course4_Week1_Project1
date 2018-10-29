@@ -11,8 +11,9 @@ plot4 <- function() {
   plot(twodaysdata$timestamp, twodaysdata$Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering")
   lines(twodaysdata$timestamp, twodaysdata$Sub_metering_2, col = "red")
   lines(twodaysdata$timestamp, twodaysdata$Sub_metering_3, col = "blue")
+  
   #bty - to remove the box around the legend
-  #ce - shrinks the text to fit the area
+  #cex - shrinks the text to fit the area
   legend("topright", col = c("black", "red", "blue"), c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
          lty = c(1,1), bty = "n", cex = .5)
   
